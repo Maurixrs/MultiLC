@@ -9,6 +9,7 @@ namespace MultiLC.Models
     {
         public int IdMesa { get; set; }
 
+        [MaxSevenUsers]
         public ICollection<Usuario> Usuarios { get; set; }
 
         public ICollection<Venta> Ventas { get; set; } 
