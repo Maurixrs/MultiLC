@@ -18,7 +18,8 @@ namespace MultiLC.Controllers
         // GET: Puntos
         public ActionResult Index()
         {
-            return View(db.Puntos.ToList());
+            var puntos = db.Puntos.Include(p => p.Usuario);
+            return View(puntos.ToList());
         }
 
         // GET: Puntos/Details/5
@@ -39,6 +40,7 @@ namespace MultiLC.Controllers
         // GET: Puntos/Create
         public ActionResult Create()
         {
+            ViewBag.IdUsuario = new SelectList(db.Usuario, "IdUsuario", "Nombre");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace MultiLC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdPuntos,Cantidad,FechaAsignados,TipoPunto")] Puntos puntos)
+        public ActionResult Create([Bind(Include = "IdPuntos,Cantidad,IdUsuario,FechaAsignados,TipoPunto")] Puntos puntos)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace MultiLC.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.IdUsuario = new SelectList(db.Usuario, "IdUsuario", "Nombre", puntos.IdUsuario);
             return View(puntos);
         }
 
@@ -71,6 +74,7 @@ namespace MultiLC.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdUsuario = new SelectList(db.Usuario, "IdUsuario", "Nombre", puntos.IdUsuario);
             return View(puntos);
         }
 
@@ -79,7 +83,7 @@ namespace MultiLC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdPuntos,Cantidad,FechaAsignados,TipoPunto")] Puntos puntos)
+        public ActionResult Edit([Bind(Include = "IdPuntos,Cantidad,IdUsuario,FechaAsignados,TipoPunto")] Puntos puntos)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace MultiLC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.IdUsuario = new SelectList(db.Usuario, "IdUsuario", "Nombre", puntos.IdUsuario);
             return View(puntos);
         }
 

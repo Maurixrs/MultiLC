@@ -24,6 +24,8 @@ namespace MultiLC.Models
 
         public int Dni { get; set; }
 
+        public Usuario UsuarioPadre { get; set; }
+
         public EstadoUsuario EstadoUsuario { get; set; }
 
         public ICollection<Usuario> ListaReferidos { get; set; }
