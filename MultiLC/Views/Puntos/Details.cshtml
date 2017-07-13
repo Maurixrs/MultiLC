@@ -1,0 +1,42 @@
+﻿@model MultiLC.Models.Puntos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Puntos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAsignados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaAsignados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPunto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPunto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPuntos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

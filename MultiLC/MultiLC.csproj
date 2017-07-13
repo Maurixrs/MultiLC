@@ -199,16 +199,21 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MesasController.cs" />
+    <Compile Include="Controllers\PuntosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Enums\EstadoMesa.cs" />
+    <Compile Include="Models\Enums\EstadoUsuario.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MaxSevenUsers.cs" />
     <Compile Include="Models\Mesa.cs" />
     <Compile Include="Models\Puntos.cs" />
-    <Compile Include="Models\TipoPunto.cs" />
+    <Compile Include="Models\Enums\TipoPunto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,6 +277,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Mesas\Create.cshtml" />
+    <Content Include="Views\Mesas\Delete.cshtml" />
+    <Content Include="Views\Mesas\Details.cshtml" />
+    <Content Include="Views\Mesas\Edit.cshtml" />
+    <Content Include="Views\Mesas\Index.cshtml" />
+    <Content Include="Views\Puntos\Create.cshtml" />
+    <Content Include="Views\Puntos\Delete.cshtml" />
+    <Content Include="Views\Puntos\Details.cshtml" />
+    <Content Include="Views\Puntos\Edit.cshtml" />
+    <Content Include="Views\Puntos\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Ventas\Create.cshtml" />
+    <Content Include="Views\Ventas\Delete.cshtml" />
+    <Content Include="Views\Ventas\Details.cshtml" />
+    <Content Include="Views\Ventas\Edit.cshtml" />
+    <Content Include="Views\Ventas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
